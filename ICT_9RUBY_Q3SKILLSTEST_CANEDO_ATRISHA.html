@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Skills Test</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: url('https://i.pinimg.com/1200x/41/c9/40/41c9400715b8ea3b0f720b43ef049b47.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid #b30500;
+            backdrop-filter: blur(15px);
+        }
+        
+        .navbar-logo { 
+            height: 50px; 
+            width: auto;
+            border-radius: 10px; 
+        }
+        
+        .nav-link { 
+            text-transform: uppercase; 
+            font-weight: 600; 
+            color: rgba(255,255,255,0.9) !important; 
+            margin-right: 15px;
+        }
+
+        .nav-link:hover { 
+            color: #b30500 !important; 
+        }
+
+        .app-card {
+            background: rgba(15, 15, 15, 0.7); 
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px; 
+            margin: 110px auto 50px;
+            max-width: 650px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .profile-img { 
+            width: 130px; 
+            height: 130px; 
+            border: 3px solid #b30500; 
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(179, 5, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .form-control, .form-select {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white !important;
+            border-radius: 15px; 
+            margin-bottom: 20px;
+            padding: 12px;
+        }
+
+        .form-control:focus { 
+            border-color: #b30500; 
+            box-shadow: 0 0 10px rgba(179, 5, 0, 0.3); 
+            background: rgba(255,255,255,0.1); 
+        }
+        
+        .label-red { 
+            color: #b30500; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            display: block; 
+            margin-bottom: 8px; 
+            letter-spacing: 1px;
+        }
+
+        #uploadStatus { 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            color: #b30500; 
+            height: 20px; 
+            text-transform: uppercase;
+        }
+
+        .btn-f1 { 
+            background: #b30500; 
+            color: white; 
+            font-weight: 700; 
+            border: none; 
+            border-radius: 15px; 
+            text-transform: uppercase; 
+            padding: 15px 25px; 
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-f1:hover { 
+            background: white; 
+            color: #b30500; 
+        }
+
+        .btn-watch {
+            background: #b30500;
+            color: white;
+            border-radius: 10px;
+            padding: 8px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://i.pinimg.com/1200x/a6/a0/1e/a6a01e1e74980ed0c637d681fa771e95.jpg" class="navbar-logo">
+            </a>
+            
+            <div class="ms-auto d-flex align-items-center">
+                <a class="nav-link" href="#">Schedules</a>
+                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="#">News</a>
+                <a href="https://racingnews365.com/lewis-hamilton-endures-painful-stoppage-as-red-bull-unveil-upgrades-racingnews365-review" target="_blank" class="btn-watch">Related Article</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="app-card">
+            <div class="text-center">
+                <img src="https://i.pinimg.com/736x/8d/7c/6e/8d7c6e1f29fb499f04a90ec2eb2dadbd.jpg" class="profile-img rounded-circle">
+                
+                <div class="mb-4">
+                    <label class="btn btn-outline-light btn-sm" style="border-radius: 10px;">
+                        SELECT PHOTO
+                        <input type="file" hidden onchange="handleUpload()">
+                    </label>
+                    <div id="uploadStatus" class="mt-2"></div>
+                </div>
+
+                <h2 class="fw-bold mb-4">REDBULL GIVES YOU <span style="color:#b30500">WINGS.</span></h2>
+                
+                <div class="row text-start">
+                    <div class="col-md-6">
+                        <label class="label-red">Full Name</label>
+                        <input type="text" id="candName" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="label-red">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="label-red">Contact Number</label>
+                        <input type="tel" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="label-red">Salary Expectation</label>
+                        <input type="number" id="candSalary" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="label-red">Gender</label>
+                        <select class="form-select">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="label-red">Roles</label>
+                        <select class="form-select">
+                            <option>Main Driver</option>
+                            <option>Trackside Engineer</option>
+                            <option>Pit Crew</option>
+                            <option>Strategist</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 mt-2">
+                        <button class="btn btn-f1" onclick="processApp()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 text-center">
+        <p class="small opacity-50">Atrisha Cañedo || 9 RUBY © 2026</p>
+    </footer>
+
+    <script>
+        function handleUpload() {
+            document.getElementById('uploadStatus').innerText = "IMAGE HAS BEEN UPLOADED";
+        }
+
+        function processApp() {
+            var name = document.getElementById('candName').value;
+            var salary = document.getElementById('candSalary').value;
+
+            if (name === "" || salary === "") {
+                alert("BOX BOX BOX! Fill in the name and salary.");
+            } else {
+                alert("Transmission Successful. See you on the grid, " + name + "!");
+            }
+        }
+    </script>
+
+</body>
+</html>
